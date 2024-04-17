@@ -32,6 +32,25 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(trig,0);
+  delayMicroseconds(2);
+  digitalWrite(trig,1);
+  delayMicroseconds(10);
+  digitalWrite(trig,0);
+  duration=pulseIn(echo,1);
+  dist=duration * 0.034 / 2;
+  if(dist < 20)
+  {
+    digitalWrite(inl1,LOW);
+    digitalWrite(inl2,HIGH);
+    digitalWrite(inl3,LOW);   
+    digitalWrite(inl4,HIGH);
+    digitalWrite(inr1,LOW);
+    digitalWrite(inr2,HIGH);
+    digitalWrite(inr3,LOW);
+    digitalWrite(inr4,HIGH);
+  }
+  
   if(Serial.available())
   {//if there is data being recieved
     blueToothVal=Serial.read();//read it
