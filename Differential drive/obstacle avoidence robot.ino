@@ -57,7 +57,7 @@ void loop() {
   }
   if(blueToothVal=='s')
   {//if value from the blutooth serial in n
-   //move forward
+   //stop
     digitalWrite(inl1,LOW);
     digitalWrite(inl2,LOW);
     digitalWrite(inl3,LOW);
