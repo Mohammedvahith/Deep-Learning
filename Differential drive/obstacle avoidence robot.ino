@@ -50,51 +50,9 @@ void loop() {
     digitalWrite(inr3,LOW);
     digitalWrite(inr4,HIGH);
   }
-  
-  if(Serial.available())
-  {//if there is data being recieved
-    blueToothVal=Serial.read();//read it
-  }
-  if(blueToothVal=='s')
-  {//if value from the blutooth serial in n
-   //stop
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,LOW);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='f')
-  {//if value from the blutooth serial in n
-   //move forward
-    digitalWrite(inl1,HIGH);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,HIGH);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,HIGH);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,HIGH);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='b')
-  {//if value from the blutooth serial in n
-   //backward
-    Serial.print('backward');
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,HIGH);
-    digitalWrite(inl3,LOW);   
-    digitalWrite(inl4,HIGH);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,HIGH);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,HIGH);
-  }
-  if(blueToothVal=='r')
-  {//if value from the blutooth serial in n
-   //right
+  else if(dist>=20 && dist<=25)
+  {
+    //right
     digitalWrite(inl1,HIGH);
     digitalWrite(inl2,LOW);
     digitalWrite(inl3,LOW);
@@ -104,112 +62,16 @@ void loop() {
     digitalWrite(inr3,HIGH);
     digitalWrite(inr4,LOW);
   }
-  if(blueToothVal=='l')
-  {//if value from the blutooth serial in n
-   //left
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,HIGH);
-    digitalWrite(inl3,HIGH);   
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,HIGH);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,HIGH);
-  }
-  if(blueToothVal=='e')
-  {//if value from the blutooth serial in n
-   //forward-right
-    digitalWrite(inl1,HIGH);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,LOW);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,HIGH);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='w')
-  {//if value from the blutooth serial in n
-   //forward-left
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,HIGH);   
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,HIGH);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='n')
-  {//if value from the blutooth serial in n
-   //backward-right
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,LOW);
-    digitalWrite(inl4,HIGH);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,HIGH);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='j')
-  {//if value from the blutooth serial in n
-   //backward-left
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,HIGH);
-    digitalWrite(inl3,LOW);   
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,HIGH);
-  }
-  if(blueToothVal=='k')
-  {//if value from the blutooth serial in n
-   //turning - right
-    digitalWrite(inl1,HIGH);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,HIGH);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,HIGH);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,HIGH);
-  }
-  if(blueToothVal=='p')
-  {//if value from the blutooth serial in n
-   //turning - left
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,HIGH);
-    digitalWrite(inl3,LOW);
-    digitalWrite(inl4,HIGH);
-    digitalWrite(inr1,HIGH);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,HIGH);
-    digitalWrite(inr4,LOW);
-  }
-  if(blueToothVal=='o')
-  {//if value from the blutooth serial in n
-   //CURVED TRAJECTORY
-    digitalWrite(inl1,HIGH);
-    digitalWrite(inl2,LOW);
-    digitalWrite(inl3,HIGH);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,LOW);
-    digitalWrite(inr2,HIGH);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,HIGH);
-  }
-  if(blueToothVal=='a')
-  {//if value from the blutooth serial in n
-   //LATERAL ARC
-    digitalWrite(inl1,LOW);
-    digitalWrite(inl2,HIGH);
-    digitalWrite(inl3,LOW);
-    digitalWrite(inl4,LOW);
-    digitalWrite(inr1,HIGH);
-    digitalWrite(inr2,LOW);
-    digitalWrite(inr3,LOW);
-    digitalWrite(inr4,LOW);
+  else
+  {
+   //Forward direction
+  digitalWrite(inl1, HIGH);
+  digitalWrite(inl2, LOW);
+  digitalWrite(inl3, HIGH);
+  digitalWrite(inl4, LOW);
+  digitalWrite(inr1,HIGH);
+  digitalWrite(inr2, LOW);
+  digitalWrite(inr3,HIGH);
+  digitalWrite(inr4, LOW);
   }
 }
